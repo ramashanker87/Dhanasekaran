@@ -1,4 +1,4 @@
-package com.rama.app;
+package com.dhana.app;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
