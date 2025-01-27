@@ -1,7 +1,6 @@
 package com.dhana.app;
 
-import.junit.framework.Testsuite;
-import.org.junit.Test;
+import org.junit.Test;
 
 public class CalculatorTest {
 
