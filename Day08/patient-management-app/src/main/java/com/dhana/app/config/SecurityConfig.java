@@ -1,5 +1,6 @@
 package com.dhana.app.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,16 +18,30 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 public class SecurityConfig {
 
+    @Value("${doctor.user}")
+    private String doctorUser;
+    @Value("${doctor.password}")
+    private String doctorPassword;
+    @Value("${doctor.role}")
+    private String doctorRole;
+
+    @Value("${patient.user}")
+    private String patientUser;
+    @Value("${patient.password}")
+    private String patientPassword;
+    @Value("${patient.role}")
+    private String patientRole;
+
     @Bean
     public UserDetailsService userDetailsService(){
-        UserDetails doctor = User.withUsername("doctor1")
+        UserDetails doctor = User.withUsername(doctorUser)
                 .password(passwordEncoder()
-                        .encode("password1"))
-                .roles("DOCTOR").build();
-        UserDetails patient = User.withUsername("patient1")
+                        .encode(doctorPassword))
+                .roles(doctorRole).build();
+        UserDetails patient = User.withUsername(patientUser)
                 .password(passwordEncoder()
-                        .encode("password1"))
-                .roles("PATIENT").build();
+                        .encode(patientPassword))
+                .roles(patientRole).build();
         return new InMemoryUserDetailsManager(doctor,patient);
     }
     @Bean
@@ -38,12 +53,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/patient/get/all/patient").hasRole("PATIENT")
-                                .requestMatchers("/patient/get/patient").hasRole("PATIENT")
-                                .requestMatchers("/patient/create/patient").hasRole("DOCTOR")
-                                .requestMatchers("/patient/update/patients").hasRole("DOCTOR")
-                                .requestMatchers("/patient/delete/patients").hasRole("DOCTOR")
-                                .requestMatchers("/actuator/health").hasRole("PATIENT")
+                                .requestMatchers("/patient/get/all/patient").hasRole(patientRole)
+                                .requestMatchers("/patient/get/patient").hasRole(patientRole)
+                                .requestMatchers("/patient/create/patient").hasRole(doctorRole)
+                                .requestMatchers("/patient/update/patients").hasRole(doctorRole)
+                                .requestMatchers("/patient/delete/patients").hasRole(doctorRole)
+                                .requestMatchers("/actuator/health").hasRole(patientRole)
                                 .anyRequest().authenticated()).httpBasic(withDefaults());
         return http.build();
     }
