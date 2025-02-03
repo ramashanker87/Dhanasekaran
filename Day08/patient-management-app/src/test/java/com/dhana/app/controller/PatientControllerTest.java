@@ -42,6 +42,19 @@ public class PatientControllerTest {
     }
 
     @Test
+    public void testGetPatientByName() {
+        Map<String, Patient> patientMap = new HashMap<>();
+        Patient patient1 = new Patient("Pat1", "1", "Hospital1", 21, "M");
+        Patient patient2 = new Patient("Pat2", "2", "Hospital2", 24, "M");
+        patientMap.put(patient1.getName(), patient1);
+        patientMap.put(patient2.getName(), patient2);
+        when(patientService.readPatientById(anyString())).thenReturn(patient1);
+        Patient resultPatient = patientController.readPatientById(patient1.getName());
+        assert resultPatient != null;
+        assert resultPatient.getName().equals("Pat1");
+    }
+
+    @Test
     public void testCreatePatients(){
         Patient patient1 = new Patient("Pat1", "1", "Hospital1", 21, "M");
         when(patientService.createPatient(patient1)).thenReturn(patient1);
@@ -76,8 +89,4 @@ public class PatientControllerTest {
         verify(patientService, atLeast(1)).deletePatient(anyString());
     }
 
-    @Test
-    public void testGetPatientByName() {
-        patientController.getAllPatientByName();
-    }
 }

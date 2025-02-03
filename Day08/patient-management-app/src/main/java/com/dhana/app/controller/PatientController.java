@@ -20,6 +20,11 @@ public class PatientController {
         return patientService.readAllPatient();
     }
 
+    @GetMapping("/get/patient")
+    public Patient readPatientById(@RequestParam("id") String id){
+        return patientService.readPatientById(id);
+    }
+
     @PostMapping("/create/patient")
     public Patient createPatients(@RequestBody Patient patient){
         return patientService.createPatient(patient);
@@ -35,8 +40,4 @@ public class PatientController {
         patientService.deletePatient(id);
     }
 
-    @GetMapping("/get/patient")
-    public void getAllPatientByName(){
-
     }
-}

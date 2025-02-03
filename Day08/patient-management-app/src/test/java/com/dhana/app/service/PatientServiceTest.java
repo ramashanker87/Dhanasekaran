@@ -58,8 +58,8 @@ public class PatientServiceTest {
     public void testDeletePatient() {
         Patient patient1 = new Patient("Pat1", "1", "Hospital1", 21, "M");
         Patient expectedPatient = patientService.createPatient(patient1);
-        patientService.deletePatient(patient1.getName());
-        Patient expectedResult = patientService.readPatientByName(patient1.getName());
+        patientService.deletePatient(patient1.getId());
+        Patient expectedResult = patientService.readPatientById(patient1.getId());
         assert expectedResult == null;
     }
 }

@@ -29,8 +29,8 @@ public class PatientService {
         patients.remove(id);
     }
 
-    public Patient readPatientByName(String name) {
-        Patient result = patients.get(name);
+    public Patient readPatientById(String id) {
+        Patient result = patients.get(id);
         return result;
     }
 }
