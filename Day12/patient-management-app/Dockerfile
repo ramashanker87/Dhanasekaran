@@ -1,5 +1,5 @@
-## Sets the base image to OpenJDK, which contains the Java runtime and development environment.
-FROM openjdk
+## Sets the base image to Eclipse-temurin, which contains the Java runtime and development environment.
+FROM eclipse-temurin:23-jdk
 
 ## Defines a volume at /tmp, allowing temporary files to persist outside the container.
 VOLUME /tmp

@@ -1,7 +1,8 @@
-## Create a Spring boot application as patient-management-app
-## TDD development completed using Junit and Mockito
-## Added security auth configuration
-## Updated pom.xml with dockerfile-maven-plugin and added Dockerfile
+## Create a Spring boot application as patient-management-app - Day08 Task
+## TDD development completed using Junit and Mockito  - Day08 Task
+## Added security auth configuration - Day10 Task
+## Updated pom.xml with dockerfile-maven-plugin and added Dockerfile - Day12 Task
+## Springboot application containerized successfully using Docker - Day12 Task
 
 ## Detail of Module Patient
 
