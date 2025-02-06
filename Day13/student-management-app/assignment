@@ -1,0 +1,31 @@
+## Create a Spring boot application as student-management-app - Day 11 Task
+## Run the application as Docker container using docker compose - Day 13 Task
+
+## Detail of Module Student
+
+String id
+String name
+String schoolName
+int age
+String gender
+
+## Create Controller
+
+/student/save
+
+/student/read
+
+    {
+         "name":"student1",
+         "schoolName": "school1",
+         "age":17,
+         "gender": "M",
+    }
+
+ Develop This project using TDD and test coverage should be more than 80%
+
+ All the data should get store in Mysql Database
+
+ Create Readme file which contain the all steps
+
+
