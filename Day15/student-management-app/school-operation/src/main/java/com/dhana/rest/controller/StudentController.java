@@ -2,12 +2,20 @@ package com.dhana.rest.controller;
 
 import com.dhana.rest.model.Student;
 import com.dhana.rest.repository.StudentRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/student")
 public class StudentController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
+
     private final StudentRepository studentRepository;
 
     public StudentController(StudentRepository studentRepository) {
@@ -22,9 +30,12 @@ public class StudentController {
     }
 
     @GetMapping("/read")
-    public Iterable<Student> read() {
-        return studentRepository.findAll();
+    public ResponseEntity<List<Student>> getAllStudents(){
+        LOGGER.info("Get All Student Data");
+        List <Student> students = (List <Student>) studentRepository.findAll();
+        return ResponseEntity.ok(students);
     }
+
 
     @PutMapping("/updateAge")
     public ResponseEntity<String> updateAge(String name, Integer age) {
