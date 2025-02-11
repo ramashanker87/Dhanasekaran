@@ -12,12 +12,12 @@ import org.springframework.web.client.RestTemplate;
 
 @RestController
 @RequestMapping("/caller")
-public class CallerController {
-    private static final Logger LOGGER = LoggerFactory.getLogger(CallerController.class);
+public class StudentController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
 
     private final RestTemplate restTemplate;
 
-    public CallerController(RestTemplate restTemplate) {
+    public StudentController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
     @Value("${get.receive.url}")

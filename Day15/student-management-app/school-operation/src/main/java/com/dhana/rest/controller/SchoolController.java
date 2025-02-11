@@ -1,10 +1,9 @@
 package com.dhana.rest.controller;
 
-import com.dhana.rest.model.Student;
-import com.dhana.rest.repository.StudentRepository;
+import com.dhana.rest.model.School;
+import com.dhana.rest.repository.SchoolRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,27 +11,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/student")
-public class StudentController {
+public class SchoolController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(SchoolController.class);
 
-    private final StudentRepository studentRepository;
+    private final SchoolRepository studentRepository;
 
-    public StudentController(StudentRepository studentRepository) {
+    public SchoolController(SchoolRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
     @PostMapping("/save")
-    public String save(@RequestBody final Student student){
+    public String save(@RequestBody final School student){
         System.out.println("Saving Student Data: " + student);
         studentRepository.save(student);
         return "Student Data Saved";
     }
 
     @GetMapping("/read")
-    public ResponseEntity<List<Student>> getAllStudents(){
+    public ResponseEntity<List<School>> getAllStudents(){
         LOGGER.info("Get All Student Data");
-        List <Student> students = (List <Student>) studentRepository.findAll();
+        List <School> students = (List <School>) studentRepository.findAll();
         return ResponseEntity.ok(students);
     }
 
