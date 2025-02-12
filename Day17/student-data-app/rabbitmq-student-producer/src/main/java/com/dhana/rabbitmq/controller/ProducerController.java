@@ -1,6 +1,7 @@
 package com.dhana.rabbitmq.controller;
 import com.dhana.rabbitmq.module.Student;
 import com.dhana.rabbitmq.service.RabbitMqSender;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
@@ -25,7 +26,13 @@ public class ProducerController {
 
     @PostMapping("/save")
     public Student student(@RequestBody Student student) {
-        rabbitMqSender.sendStudent(student);
+        rabbitMqSender.saveStudent(student);
         return student;
+    }
+
+    @DeleteMapping("/delete")
+    public Student delete(@RequestParam("name") String name) {
+        rabbitMqSender.deleteStudent(name);
+        return null;
     }
 }

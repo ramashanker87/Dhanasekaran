@@ -12,4 +12,10 @@
 	<version>1.0.0</version>
 	<name>rabbitmq-student-producer</name>
 	<description>project for Spring Boot Microservice RabbitMQ Student Producer</description>
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+        </dependency>
+    </dependencies>
 </project>
