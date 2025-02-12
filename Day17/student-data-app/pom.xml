@@ -10,22 +10,10 @@
 	</parent>
 	<groupId>com.dhana.rabbitmq</groupId>
 	<artifactId>student-data-app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
 	<name>student-data-app</name>
 	<description>Demo project for Spring Boot</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
 	<properties>
 		<java.version>23</java.version>
 	</properties>
@@ -34,7 +22,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -50,5 +45,8 @@
 			</plugin>
 		</plugins>
 	</build>
-
+	<modules>
+		<module>rabbitmq-student-producer</module>
+		<module>rabbitmq-student-consumer</module>
+	</modules>
 </project>

@@ -1,15 +1,13 @@
-/*
-package com.dhana.rest;
+package com.dhana.rabbitmq;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SchoolOperationApplicationTests {
+class StudentProducerApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
 
 }
-*/
