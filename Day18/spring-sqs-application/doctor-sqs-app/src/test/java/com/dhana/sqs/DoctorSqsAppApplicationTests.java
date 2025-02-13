@@ -1,15 +1,13 @@
-/*
-package com.dhana.rest;
+package com.dhana.sqs;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class StudentAppApplicationTests {
+class DoctorSqsAppApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
-*/

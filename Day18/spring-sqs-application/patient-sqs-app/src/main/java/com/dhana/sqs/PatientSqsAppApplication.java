@@ -1,13 +1,13 @@
-package com.dhana.rest;
+package com.dhana.sqs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SchoolOperationApplication {
+public class PatientSqsAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SchoolOperationApplication.class, args);
+		SpringApplication.run(PatientSqsAppApplication.class, args);
 	}
 
 }
