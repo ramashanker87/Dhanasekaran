@@ -6,7 +6,6 @@
 		<groupId>com.dhana.sqs</groupId>
 		<artifactId>spring-sqs-application</artifactId>
 		<version>1.0.0</version>
-		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<artifactId>doctor-sqs-app</artifactId>
 	<version>1.0.0</version>
