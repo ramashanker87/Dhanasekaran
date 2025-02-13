@@ -32,15 +32,15 @@ public class ConsumerService {
     }
 
     @RabbitListener(queues = "${rabbitmq.student.queue.name}")
-    public void receiveStudent(@RequestBody Student student) {
-        logger.info("receive message: {}", student);
+    public void receiveStudent(Student student) {
+        logger.info("receive student record: {}", student.toString());
         studentRepository.save(student);
         logger.info("Student record '{}' saved sucessfully", student);
     }
 
-    @RabbitListener(queues = "${rabbitmq.student.queue.name}")
-    public void deleteStudent(@RequestParam ("name") String name) {
-        logger.info("receive message: {}", name);
+    @RabbitListener(queues = "${rabbitmq.name.queue.name}")
+    public void deleteStudent(String name) {
+        logger.info("receive delete request: {}", name);
         studentRepository.deleteByName(name);
         logger.info("Student with name '{}' deleted successfully.", name);
     }

@@ -18,7 +18,7 @@ public class RabbitMqConfig {
     @Value("${rabbitmq.student.queue.name}")
     String studentQueueName;
 
-    @Value("${rabbitmq..student.routingkey.name}")
+    @Value("${rabbitmq.student.routingkey.name}")
     String studentRoutingKeyName;
 
     @Value("${rabbitmq.name.queue.name}")
@@ -57,7 +57,7 @@ public class RabbitMqConfig {
     }
 
     @Bean
-    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
+    public AmqpTemplate amqpTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMandatory(true);
         rabbitTemplate.setMessageConverter(JsonMessageConverter());
