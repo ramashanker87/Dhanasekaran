@@ -56,14 +56,26 @@ logging.pattern.file=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %m
 management.endpoints.web.exposure.include=loggers
 
 ```
-curl --location --request GET 'http://localhost:8080/actuator/loggers'
+http://localhost:8080/actuator/loggers
 ```
 ```
-curl --location --request 'http://localhost:8080/actuator/loggers/com.vehicle.app'
+curl --location 'http://localhost:8080/actuator/loggers/com.vehicle.app' \
+--header 'Content-Type: application/json' \
+--data '{
+   "configuredLevel": "TRACE"
+}'
 ```
 ```
-curl --location --request GET 'http://localhost:8080/actuator/loggers/com.vehicle.app.model.Vehicle'
+curl --location 'http://localhost:8080/actuator/loggers/com.vehicle.app.model.Vehicle' \
+--header 'Content-Type: application/json' \
+--data '{
+   "configuredLevel": "DEBUG"
+}'
 ```
 ```
-curl --location --request GET 'http://localhost:8080/actuator/loggers/com.vehicle.app.model.Owner'
+curl --location 'http://localhost:8080/actuator/loggers/com.vehicle.app.model.Owner' \
+--header 'Content-Type: application/json' \
+--data '{
+   "configuredLevel": "INFO"
+}'
 ```
