@@ -23,7 +23,7 @@ public class SchoolController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<String> save(@RequestBody final School student){
+    public ResponseEntity<String> save(@RequestBody final School student) {
         System.out.println("Saving Student Data: " + student);
         schoolService.save(student);
         LOGGER.info("Save Students Data");
@@ -31,7 +31,7 @@ public class SchoolController {
     }
 
     @GetMapping("/read")
-    public ResponseEntity<List<School>> getAllStudents(){
+    public ResponseEntity<List<School>> getAllStudents() {
         LOGGER.info("Get All Student Data");
         List <School> students = (List <School>) schoolService.getAllStudents();
         return ResponseEntity.ok(students);
@@ -39,7 +39,7 @@ public class SchoolController {
 
 
     @PutMapping("/updateAge")
-    public ResponseEntity<String> updateAge(String name, Integer age) {
+    public ResponseEntity<String> updateAge(String name, Integer age)  {
         LOGGER.info("Update Student Age Using Name");
         int newAge = schoolService.updateAge(name, age);
         return ResponseEntity.ok("Student Age Updated Successfully");

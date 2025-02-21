@@ -32,7 +32,7 @@ public class RabbitMqSender {
     }
 
     public void saveStudent(Student student) {
-        logger.info("Sending Student Details Message: {}", student.toString());
+        logger.info("Sending Student Details Message: {}", student);
         amqpTemplate.convertAndSend(exchangeName, studentRoutingKeyName, student);
     }
 

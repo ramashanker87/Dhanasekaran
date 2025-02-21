@@ -33,7 +33,7 @@ public class ConsumerService {
 
     @RabbitListener(queues = "${rabbitmq.student.queue.name}")
     public void receiveStudent(Student student) {
-        logger.info("receive student record: {}", student.toString());
+        logger.info("receive student record: {}", student);
         studentRepository.save(student);
         logger.info("Student record '{}' saved sucessfully", student);
     }

@@ -41,6 +41,7 @@ public class PatientControllerTest {
         assert patientResultMap.get(patient3.getId())==patient3;
     }
 
+
     @Test
     public void testGetPatientByName() {
         Map<String, Patient> patientMap = new HashMap<>();
