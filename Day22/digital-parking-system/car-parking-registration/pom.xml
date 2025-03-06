@@ -11,5 +11,6 @@
 	<artifactId>car-parking-registration</artifactId>
 	<version>1.0.0</version>
 	<name>car-parking-registration</name>
-	<description>Spring Boot App for Digital Car Parking Registration</description>
+	<description>Spring Boot Car Parking Registration</description>
+
 </project>

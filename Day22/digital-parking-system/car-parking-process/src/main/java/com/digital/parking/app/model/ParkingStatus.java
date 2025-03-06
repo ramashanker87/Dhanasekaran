@@ -1,9 +1,14 @@
 package com.digital.parking.app.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class ParkingEnd {
+@Entity
+public class ParkingStatus {
+    @Id
     private String parkingNumber;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
@@ -14,7 +19,7 @@ public class ParkingEnd {
 
     @Override
     public String toString() {
-        return "ParkingEnd{" +
+        return "ParkingStatus{" +
                 "parkingNumber='" + parkingNumber + '\'' +
                 ", startTime=" + startTime +
                 ", endTime=" + endTime +
@@ -24,8 +29,8 @@ public class ParkingEnd {
                 '}';
     }
 
-    public ParkingEnd() {}
-    public ParkingEnd(String parkingNumber, LocalDateTime startTime, LocalDateTime endTime, String parkingStatus, String regNumber) {
+    public ParkingStatus() {}
+    public ParkingStatus(String parkingNumber, LocalDateTime startTime, LocalDateTime endTime, String parkingStatus, String regNumber) {
         super();
         this.parkingNumber = parkingNumber;
         this.startTime = startTime;

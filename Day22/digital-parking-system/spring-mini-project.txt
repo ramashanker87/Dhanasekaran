@@ -21,19 +21,19 @@ Create two rest controller
 
     ParkingStart Module
      String parkingNo
-     Date startTime  (Should atways current time)
+     Date startTime  (Should always current time)
      String Status   (Start)
-     String String regNo
+     String regNo
 
     ParkingEnd Module
       String parkingNo
-      Date startTime  (Should atways current time)
-      Date endTime    ( End time)
+      Date startTime  (Should always current time)
+      Date endTime    (End time)
       int price
       String Status   (End)
-      String String regNo
+      String regNo
 
-  The price will be calculate based on time difference between start and endtime
+  The price will be calculated based on time difference between start and end time
 
    PerMinute 2 Rs
 
@@ -43,13 +43,13 @@ The microservice car-parking-registration send the data ParkingStart using (sqs 
 This data will get store in dynamodb : QueueName parking-start-request
                                        QueueName parking-start-response
 
-While parking end send the regNo using QueneName parking-end-request and fetch the data from dynamodb
-and return back response on QueneName parking-end-response.
+While parking end send the regNo using QueueName parking-end-request and fetch the data from dynamodb
+and return back response on QueueName parking-end-response.
 
 Write The all test cases
-Handle with custome Exception
+Handle with custom Exception
 Write the ReadMe file for instruction
-Code guidline for naming convention
+Code guidelines for naming convention
 
 Commit the project in Day22
 

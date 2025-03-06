@@ -1,8 +1,13 @@
 package com.digital.parking.app.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDateTime;
 
+@Entity
 public class ParkingStart {
+    @Id
     private String parkingNumber;
     private LocalDateTime startTime;
     private String regNumber;

@@ -11,5 +11,16 @@
 	<artifactId>car-parking-process</artifactId>
 	<version>1.0.0</version>
 	<name>car-parking-process</name>
-	<description>Spring Boot App for Digital Car Parking Process</description>
+	<description>Spring Boot For Car Parking Process</description>
+	<dependencies>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>com.mysql</groupId>
+		<artifactId>mysql-connector-j</artifactId>
+		<version>9.2.0</version>
+	</dependency>
+	</dependencies>
 </project>

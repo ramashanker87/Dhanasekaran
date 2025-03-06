@@ -1,9 +1,15 @@
 package com.digital.parking.app.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+@Entity
 public class ParkingEnd {
+
+    @Id
     private String parkingNumber;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
